@@ -16,14 +16,18 @@ public class Handler extends Thread {
         prefix = "!dadbot";
     }
 
+    @Override
     public void run(){
         //find out which type of message it is and pass off to correct sub-handler
         //check first for the dad bot prefix and hand off if possible
         if(event.getMessage().getContentRaw().toLowerCase().startsWith(prefix)){
             CommandHandler commandHandler = new CommandHandler(event, jda);
             commandHandler.run();
+        } else {
+            //if not then hand off to joke name handler
+            JokeNameHandler jokeNameHandler = new JokeNameHandler(event, jda);
+            jokeNameHandler.run();
         }
-        //secondly hand off to dadjoke checker
     }
 
 }

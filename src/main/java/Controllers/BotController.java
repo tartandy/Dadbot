@@ -18,6 +18,7 @@ public class BotController {
     public BotController() {
         //creates the bot and throws a login exception if it cannot connect
         this.builder = new JDABuilder(AccountType.BOT);
+        System.out.println(FileHandler.getToken());
         builder.setToken(FileHandler.getToken());
         builder.setActivity(Activity.watching("for !dadbot help"));
         //set the JDA listener
