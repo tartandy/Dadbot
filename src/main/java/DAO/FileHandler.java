@@ -128,4 +128,19 @@ public class FileHandler {
     public static String getDefaultName(String id) {
         return loadDefaultNames().getOrDefault(id, null);
     }
+
+    public static String getToken() {
+            String fn = System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "token.txt";
+            String line;
+            //load file into BR
+            try {
+                File file = new File(fn);
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                return br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        return null;
+    }
 }

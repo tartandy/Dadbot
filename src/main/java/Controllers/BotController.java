@@ -1,5 +1,6 @@
 package Controllers;
 
+import DAO.FileHandler;
 import Service.Listener;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDABuilder;
@@ -12,13 +13,12 @@ import java.net.http.WebSocket;
 public class BotController {
 
     private JDABuilder builder;
-    private final String token  = "NjU0MDE1OTYzNTA2OTMzNzkx.XgXtzg.dY19guQZL8oVbq5vD77PDoaw6-Y";
     private Listener listener;
 
     public BotController() {
         //creates the bot and throws a login exception if it cannot connect
         this.builder = new JDABuilder(AccountType.BOT);
-        builder.setToken(token);
+        builder.setToken(FileHandler.getToken());
         builder.setActivity(Activity.watching("for !dadbot help"));
         //set the JDA listener
         listener = new Listener();
