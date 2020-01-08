@@ -22,7 +22,7 @@ public class JokeNameHandler {
         prefixes.add("i'm ");
         prefixes.add("im ");
         prefixes.add("i am ");
-        botID = "654015963506933791";
+        botID = "642106961227415575";
         this.jda = jda;
         this.event = event;
     }
@@ -45,18 +45,20 @@ public class JokeNameHandler {
 
             //get original name
             originalName = FileHandler.getDefaultName(event.getAuthor().getId());
+            System.out.println(jokeName + "     " +originalName);
             //if original name has been set then change to nickname for time period
             if(originalName != null){
+
                 //message is good to send
                 sendMessage(message);
                 //change nickname for 30s
-                Objects.requireNonNull(event.getGuild().getMember(event.getAuthor())).modifyNickname(jokeName);
+                Objects.requireNonNull(event.getGuild().getMember(event.getAuthor())).modifyNickname(jokeName).queue();
                 try {
                     Thread.sleep(30000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Objects.requireNonNull(event.getGuild().getMember(event.getAuthor())).modifyNickname(originalName);
+                Objects.requireNonNull(event.getGuild().getMember(event.getAuthor())).modifyNickname(originalName).queue();
             } else {
                 //warn user to set a default name before it can change names again
                 sendMessage("I wan't to make the joke and all, but first we need ground rules. Set a default name, son. " +

@@ -80,7 +80,7 @@ public class FileHandler {
             //get scoreboard and increment score for that user
             HashMap<String, Integer> counter = getCounter();
             int newValue = counter.getOrDefault(id, 0);
-            counter.put(id, newValue);
+            counter.put(id, newValue+1);
             //store scoreboard
             storeCounter(counter);
         }
