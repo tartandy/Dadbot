@@ -1,5 +1,5 @@
 # Dadbot
-This is a discord bot creating using JDA, which has several features. I run it locally on my raspberry pi for a few servers that I'm in, but don't have the resources nor care to making the bot publically accessable.
+This is a discord bot creating using JDA, which has several features. I run it locally on my raspberry pi for a few servers that I'm in, but don't have the resources nor incentive to making the bot publically accessable.
 
 If you wish to take this code and run the bot for your own servers, by all means. But you'll need to make your own BOT on discord and provide your own token.
 
