@@ -27,6 +27,6 @@ What bot would be a true bot without having a fun scoreboard? This one keeps a c
 If you get stuck with anything above, there's a help command built into him by typing **!dadbot help**. His command prefix is !dadbot if you hadn't already guessed.
 
 # Setup of your own Dadbot
-I'm assuming you know how to create your own bot on discords API, so from here it's just a matter of downloading the JAR file in this project under **/Build/Lib/**. I run it by typing `java -jar [path_to_jar] Main`" in cmd.
+I'm assuming you know how to create your own bot on discords API, so from here it's just a matter of downloading the JAR file in this project under **/Build/Lib/**. I run it by typing `java -cp [path_to_jar] Main` in cmd.
 
 Other option is to clone this repo and run it yourself in your IDE of choice. You do you.
